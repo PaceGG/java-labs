@@ -55,10 +55,15 @@ public class Main {
                     System.out.println(a + " делится на " + b + " или " + b + " делится на " + a + "? " + m.isDivisor(a, b));
                     break;
                 case 5:
-                    System.out.print("Введите два числа (a и b): ");
-                    int a1 = scanner.nextInt();
-                    int b1 = scanner.nextInt();
-                    System.out.println("Сумма последних цифр: " + m.lastNumSum(a1, b1));
+                    int sum5 = 0;
+                    System.out.print("Введите пять чисел: ");
+                    for (int i = 0; i < 5; i++) {
+                        int n = scanner.nextInt();
+                        int prevSum = sum5;
+                        sum5 = m.lastNumSum(sum5, n);
+                        if (i != 0) System.out.println(prevSum + "+" + n + " это " + sum5);
+                    }
+                    System.out.println("Итого " + sum5);
                     break;
                 case 6:
                     System.out.print("Введите числитель и знаменатель: ");
@@ -230,7 +235,7 @@ public class Main {
 
     // 10
     public int lastNumSum(int a, int b){
-        return a/10 + b/10;
+        return a%10 + b%10;
     }
 
     // task 2
