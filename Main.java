@@ -52,7 +52,7 @@ public class Main {
                     System.out.print("Введите два числа (a и b): ");
                     int a = scanner.nextInt();
                     int b = scanner.nextInt();
-                    System.out.println(a + " делится на " + b + "? " + m.isDivisor(a, b));
+                    System.out.println(a + " делится на " + b + " или " + b + " делится на " + a + "? " + m.isDivisor(a, b));
                     break;
                 case 5:
                     System.out.print("Введите два числа (a и b): ");
@@ -224,7 +224,8 @@ public class Main {
 
     // 8
     public boolean isDivisor(int a, int b){
-        return a % b == 0;
+        if (a == 0 || b == 0) return false;
+        return a % b == 0 || b % a == 0;
     }
 
     // 10
