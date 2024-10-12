@@ -254,10 +254,7 @@ public class Main {
 
     // 6
     public boolean sum3(int x, int y, int z){
-        if (x + y == z) return true;
-        if (x + z == y) return true;
-        if (y + z == x) return true;
-        return false;
+        return (x + y == z) || (x + z == y) || (y + z == x);
     }
 
     // 8
