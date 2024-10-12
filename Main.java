@@ -310,8 +310,8 @@ public class Main {
 
     // 6
     public boolean equalNum(int x){
-        while (x > 0){
-            if (x % 10 != x / 10 % 10 && x > 9) return false;
+        while (x > 9){
+            if (x % 10 != x / 10 % 10) return false;
             x /= 10;
         }
         return true;
