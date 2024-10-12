@@ -265,27 +265,29 @@ public class Main {
     }
 
     // 10
-    public void printDays(String x){
+    public void printDays(String x) {
         switch (x) {
-            default:
-                System.out.println("Это не день недели");
-                break;
-            case "Понедельник":
+            case "понедельник":
                 System.out.println("понедельник");
-            case "Вторник":
+            case "вторник":
                 System.out.println("вторник");
-            case "Среда":
+            case "среда":
                 System.out.println("среда");
-            case "Четверг": 
+            case "четверг":
                 System.out.println("четверг");
-            case "Пятница":
+            case "пятница":
                 System.out.println("пятница");
-            case "Суббота":
+            case "суббота":
                 System.out.println("суббота");
-            case "Воскресенье":
+            case "воскресенье":
                 System.out.println("воскресенье");
+                break;
+            default:
+                System.out.println("это не день недели");
+                break;
         }
     }
+    
 
     // task 3
     // 2
