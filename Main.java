@@ -23,11 +23,11 @@ public class Main {
             System.out.println("13. Проверить, все ли цифры числа равны");
             System.out.println("14. Напечатать левый треугольник");
             System.out.println("15. Игра в угадай число");
-            System.out.println("16. Найти последний индекс числа в массиве");
-            System.out.println("17. Добавить элемент в массив");
-            System.out.println("18. Развернуть массив");
-            System.out.println("19. Конкатенировать два массива");
-            System.out.println("20. Удалить отрицательные числа из массива");
+            System.out.println("17. Найти последний индекс числа в массиве");
+            System.out.println("18. Добавить элемент в массив");
+            System.out.println("19. Развернуть массив");
+            System.out.println("20. Конкатенировать два массива");
+            System.out.println("21. Удалить отрицательные числа из массива");
             System.out.println("0. Выйти");
     
             choice = scanner.nextInt();
