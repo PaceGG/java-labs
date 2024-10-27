@@ -4,4 +4,4 @@
 
 # [lab-1](https://github.com/PaceGG/java-labs/blob/lab-1/Main.java)
 
-# [lab-2](https://github.com/PaceGG/java-labs/blob/lab-2/Main.java)
+# [lab-2](https://github.com/PaceGG/java-labs/blob/lab-2)
