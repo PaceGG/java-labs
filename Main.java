@@ -9,6 +9,7 @@ public class Main {
 
         while (choice != 0){
             System.out.println("1. (1.5) Перезарядка пистолета");
+            System.out.println("2. (1.7) Непустые имена");
             
             System.out.printf("Выберите задачу: ");
             choice = scanner.nextInt();
@@ -22,6 +23,19 @@ public class Main {
                     for (int i = 0; i < 2; i++) revolver.makeShoot();
                     revolver.unload();
                     revolver.makeShoot();
+                    break;
+                case 2:
+                    Name surnameNameFatherName = new Name("Иванов", "Иван", "Иванович");
+                    System.out.println("ФИО: " + surnameNameFatherName);
+
+                    Name surnameName = new Name("Иванов", "Иван", null);
+                    System.out.println("Фамилия Имя: " + surnameName);
+
+                    Name name = new Name("", "Иван", "");
+                    System.out.println("Имя: " + name);
+
+                    Name emptyName = new Name(null, null, null);
+                    System.out.println("Пустое имя: " + emptyName);
                     break;
                 default:
                     break;

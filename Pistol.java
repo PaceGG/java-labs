@@ -1,6 +1,6 @@
 public class Pistol {
     private int ammo;
-    private int clip; // ammo limit
+    private final int clip; // ammo limit
 
 
     public Pistol(int ammo, int clip){
