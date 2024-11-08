@@ -12,6 +12,7 @@ public class Main {
             System.out.println("2. (1.7) Непустые имена");
             System.out.println("3. (2.3) Телефонный справочник");
             System.out.println("4. (3.4) Бинарное дерево");
+            System.out.println("5. (4.1) Пистолет (наследствие)");
             
             System.out.printf("Выберите задачу: ");
             choice = scanner.nextInt();
@@ -108,6 +109,24 @@ public class Main {
                     tree.add(2);
 
                     System.out.println(tree);
+                    break;
+                case 5:
+                    // Pistol revolver = new Pistol(7);
+                    // revolver.load(3);
+                    // for (int i = 0; i < 5; i++) revolver.makeShoot();
+                    // revolver.load(8);
+                    // for (int i = 0; i < 2; i++) revolver.makeShoot();
+                    // revolver.unload();
+                    // revolver.makeShoot();
+
+                    Pistol2 revolver2 = new Pistol2(7);
+                    revolver2.load(3);
+                    for (int i = 0; i < 5; i++) revolver2.shoot();
+                    revolver2.load(8);
+                    for (int i = 0; i < 2; i++) revolver2.shoot();
+                    revolver2.unload();
+                    revolver2.shoot();
+
                     break;
                 default:
                     break;
