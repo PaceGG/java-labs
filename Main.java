@@ -11,6 +11,7 @@ public class Main {
             System.out.println("1. (1.5) Перезарядка пистолета");
             System.out.println("2. (1.7) Непустые имена");
             System.out.println("3. (2.3) Телефонный справочник");
+            System.out.println("4. (3.4) Бинарное дерево");
             
             System.out.printf("Выберите задачу: ");
             choice = scanner.nextInt();
@@ -95,6 +96,18 @@ public class Main {
                     for (int i = 0; i < searchResults.length; i++) {
                         System.out.println(searchResults[i]);
                     }
+                    break;
+                case 4:
+                    Node tree = new Node();
+
+                    tree.add(3);
+                    tree.add(5);
+                    tree.add(4);
+                    tree.add(7);
+                    tree.add(1);
+                    tree.add(2);
+
+                    System.out.println(tree);
                     break;
                 default:
                     break;
