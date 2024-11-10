@@ -99,16 +99,7 @@ public class Main {
                     }
                     break;
                 case 4:
-                    Node tree = new Node();
-
-                    tree.add(3);
-                    tree.add(5);
-                    tree.add(4);
-                    tree.add(7);
-                    tree.add(1);
-                    tree.add(2);
-
-                    System.out.println(tree);
+                    
                     break;
                 case 5:
                     // Pistol revolver = new Pistol(7);
