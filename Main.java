@@ -14,6 +14,7 @@ public class Main {
             System.out.println("4. (3.4) Автомат");
             System.out.println("5. (4.1) Пистолет (наследствие)");
             System.out.println("6. (5.8) Стрелок");
+            System.out.println("7. (6.2) Сравнение точек");
             
             System.out.printf("Выберите задачу: ");
             choice = scanner.nextInt();
@@ -161,6 +162,24 @@ public class Main {
                     rifle.load(2);
                     swat.setWeapon(rifle);
                     swat.shoot();
+                    break;
+                case 7:
+                    Point p1 = new Point(1, 2);
+                    System.out.println("p1: " + p1);
+
+                    Point p2 = new Point(1, 2);
+                    System.out.println("p2: " + p2);
+
+                    Point p3 = new Point(3, 4);
+                    System.out.println("p3: " + p3);
+
+                    Name n = new Name("Фамилия", "Имя", "Отчество");
+                    System.out.println("n: " + n);
+
+                    System.out.println("p1.equals(p2): " + p1.equals(p2));
+                    System.out.println("p1.equals(p3): " + p1.equals(p3));
+                    System.out.println("p1.equals(n): " + p1.equals(n));
+                    break;
                 default:
                     break;
             }
