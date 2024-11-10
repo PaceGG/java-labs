@@ -6,4 +6,4 @@
 
 # [lab-2](https://github.com/PaceGG/java-labs/blob/lab-2)
 
-# [lab-3](https://github.com/PaceGG/java-labs/tree/lab-3/ru/butorin)
+# [lab-3](https://github.com/PaceGG/java-labs/tree/lab-3)
