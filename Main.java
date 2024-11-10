@@ -130,10 +130,16 @@ public class Main {
 
                     Pistol2 revolver2 = new Pistol2(7);
                     revolver2.load(3);
+                    System.out.println("Создаем пистолет с лимитом магазина 7 и заряжаем 3 патрона");
+                    System.out.println("Делаем 5 выстрелов");
                     for (int i = 0; i < 5; i++) revolver2.shoot();
+                    System.out.println("Заряжаем 8 патронов");
                     revolver2.load(8);
+                    System.out.println("Делаем 2 выстрела");
                     for (int i = 0; i < 2; i++) revolver2.shoot();
+                    System.out.println("Разряжаем пистолет");
                     revolver2.unload();
+                    System.out.println("Делаем 1 выстрел");
                     revolver2.shoot();
 
                     break;
