@@ -1,4 +1,4 @@
-public class Rifle extends Pistol{
+public class Rifle extends Pistol2{
     private final int rate;
 
     public Rifle(){
@@ -21,17 +21,17 @@ public class Rifle extends Pistol{
 
     public void shoot(){
         for (int i = 0; i < rate; i++){
-            if (getAmmo() == 0) {
+            if (ammo() == 0) {
                 System.out.println("Клац!");
                 return;
             }
-            super.makeShoot();
+            super.shoot();
         }
     }
 
     public void shootRange(int range){
         for (int i = 0; i < range; i++){
-            if (getAmmo() == 0) {
+            if (ammo() == 0) {
                 System.out.println("Клац!");
                 return;
             }

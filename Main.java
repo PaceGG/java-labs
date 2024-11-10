@@ -13,6 +13,7 @@ public class Main {
             System.out.println("3. (2.3) Телефонный справочник");
             System.out.println("4. (3.4) Автомат");
             System.out.println("5. (4.1) Пистолет (наследствие)");
+            System.out.println("6. (5.8) Стрелок");
             
             System.out.printf("Выберите задачу: ");
             choice = scanner.nextInt();
@@ -128,9 +129,9 @@ public class Main {
                     // revolver.unload();
                     // revolver.makeShoot();
 
+                    System.out.println("Создаем пистолет с лимитом магазина 7 и заряжаем 3 патрона");
                     Pistol2 revolver2 = new Pistol2(7);
                     revolver2.load(3);
-                    System.out.println("Создаем пистолет с лимитом магазина 7 и заряжаем 3 патрона");
                     System.out.println("Делаем 5 выстрелов");
                     for (int i = 0; i < 5; i++) revolver2.shoot();
                     System.out.println("Заряжаем 8 патронов");
@@ -141,8 +142,25 @@ public class Main {
                     revolver2.unload();
                     System.out.println("Делаем 1 выстрел");
                     revolver2.shoot();
-
                     break;
+                case 6:
+                    System.out.println("Стрелок без оружия");
+                    Shooter boxer = new Shooter("Боксер");
+                    boxer.shoot();
+
+                    System.out.println("Стрелок с пистолетом");
+                    Shooter cowboy = new Shooter("Ковбой");
+                    Pistol2 pistol = new Pistol2(7);
+                    pistol.load(4);
+                    cowboy.setWeapon(pistol);
+                    cowboy.shoot();
+
+                    System.out.println("Стрелок с автоматом, скорострельность 3, количество патрон 2");
+                    Shooter swat = new Shooter("Спецназ");
+                    Rifle rifle = new Rifle(30,3);
+                    rifle.load(2);
+                    swat.setWeapon(rifle);
+                    swat.shoot();
                 default:
                     break;
             }
