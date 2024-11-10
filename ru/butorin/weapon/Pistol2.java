@@ -1,3 +1,4 @@
+package ru.butorin.weapon;
 public class Pistol2 extends Weapon{
     private final int clip; // ammo limit
 

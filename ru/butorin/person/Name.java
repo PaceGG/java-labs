@@ -1,3 +1,4 @@
+package ru.butorin.person;
 public class Name {
     private final String surname;
     private final String name;

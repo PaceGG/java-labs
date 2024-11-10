@@ -1,3 +1,4 @@
+package ru.butorin.weapon;
 public class Rifle extends Pistol2{
     private final int rate;
 

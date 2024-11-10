@@ -1,4 +1,6 @@
-abstract class Weapon {
+package ru.butorin.weapon;
+
+public abstract class Weapon {
     private int ammo;
 
     public Weapon(int ammo){
@@ -6,7 +8,7 @@ abstract class Weapon {
         this.ammo = ammo;
     }
 
-    abstract void shoot();
+    public abstract void shoot();
     public int ammo(){return ammo;}
     public boolean getAmmo(){
         if (ammo == 0) return false;

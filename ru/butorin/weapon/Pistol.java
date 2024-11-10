@@ -1,3 +1,4 @@
+package ru.butorin.weapon;
 public class Pistol {
     private int ammo;
     private final int clip; // ammo limit
@@ -41,7 +42,7 @@ public class Pistol {
         return tempAmmo;
     }
 
-    public void makeShoot(){
+    public void shoot(){
         if (ammo > 0){
             System.out.println("Бах!");
             ammo--;

@@ -1,3 +1,7 @@
+package ru.butorin.main;
+
+import ru.butorin.weapon.*;
+
 public class Shooter {
     private String name;
     private Weapon weapon;

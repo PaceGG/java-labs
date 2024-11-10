@@ -1,8 +1,20 @@
+package ru.butorin.main;
 import java.util.Scanner;
+import ru.butorin.dictionary.*;
+import ru.butorin.geometry.*;
+import ru.butorin.person.*;
+import ru.butorin.weapon.*;
 
 public class Main {
     public static void main(String[] args){
         Main m = new Main();
+        if (args.length == 2) {
+            String x = args[0];
+            String y = args[1];
+
+            double result = m.power(x, y);
+            System.out.println(x + " в степени " + y + " = " + result);
+        } else {
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
         System.out.println();
@@ -23,11 +35,11 @@ public class Main {
                 case 1:
                     Pistol revolver = new Pistol(7);
                     revolver.load(3);
-                    for (int i = 0; i < 5; i++) revolver.makeShoot();
+                    for (int i = 0; i < 5; i++) revolver.shoot();
                     revolver.load(8);
-                    for (int i = 0; i < 2; i++) revolver.makeShoot();
+                    for (int i = 0; i < 2; i++) revolver.shoot();
                     revolver.unload();
-                    revolver.makeShoot();
+                    revolver.shoot();
                     break;
                 case 2:
                     Name surnameNameFatherName = new Name("Иванов", "Иван", "Иванович");
@@ -122,14 +134,6 @@ public class Main {
 
                     break;
                 case 5:
-                    // Pistol revolver = new Pistol(7);
-                    // revolver.load(3);
-                    // for (int i = 0; i < 5; i++) revolver.makeShoot();
-                    // revolver.load(8);
-                    // for (int i = 0; i < 2; i++) revolver.makeShoot();
-                    // revolver.unload();
-                    // revolver.makeShoot();
-
                     System.out.println("Создаем пистолет с лимитом магазина 7 и заряжаем 3 патрона");
                     Pistol2 revolver2 = new Pistol2(7);
                     revolver2.load(3);
@@ -182,8 +186,12 @@ public class Main {
                     break;
                 default:
                     break;
+                }
             }
         }
+    }
+    public double power(String x, String y) {
+        return Math.pow(Integer.parseInt(x), Integer.parseInt(y));
     }
     
 }
