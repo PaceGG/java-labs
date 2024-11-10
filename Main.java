@@ -11,7 +11,7 @@ public class Main {
             System.out.println("1. (1.5) Перезарядка пистолета");
             System.out.println("2. (1.7) Непустые имена");
             System.out.println("3. (2.3) Телефонный справочник");
-            System.out.println("4. (3.4) Бинарное дерево");
+            System.out.println("4. (3.4) Автомат");
             System.out.println("5. (4.1) Пистолет (наследствие)");
             
             System.out.printf("Выберите задачу: ");
@@ -99,7 +99,25 @@ public class Main {
                     }
                     break;
                 case 4:
+                    System.out.println("Автомат без параметров, с 10 патронами: ");
+                    Rifle ak47 = new Rifle();
+                    ak47.load(10);
+                    System.out.println("1 выстрел");
+                    ak47.shoot();
+
+                    System.out.println("Автомат с лимитом магазина 25, с 20 патронами: ");
+                    Rifle m4 = new Rifle(25);
+                    m4.load(20);
+                    System.out.println("1 выстрел");
+                    m4.shoot();
                     
+                    System.out.println("Автомат с лимитом магазина 10 и скорострельностью 2, с 5 патронами: ");
+                    Rifle awp = new Rifle(10, 2);
+                    awp.load(5);
+                    System.out.println("Встрел 3 секунды");
+                    awp.shootRange(3);
+
+
                     break;
                 case 5:
                     // Pistol revolver = new Pistol(7);
