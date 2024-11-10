@@ -28,7 +28,7 @@ public class Pistol {
 
     public int load(int loadingAmmo){
         if (loadingAmmo + clip < 0) throw new IllegalArgumentException("Количество патронов в пистолете не может быть отрицательным");
-        if (loadingAmmo + clip > clip){
+        if (loadingAmmo + ammo > clip){
             ammo = clip;
             return ammo + loadingAmmo - clip;
         };
