@@ -1,8 +1,8 @@
 import java.util.Scanner;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Main main = new Main();
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
 
@@ -10,6 +10,7 @@ public class Main {
             System.out.println("\nВыберите задачу:");
             System.out.println("1. (1.1) Обобщенная коробка");
             System.out.println("2. (1.3) Сравнимое");
+            System.out.println("3. (2.2) Поиск максимума");
 
             choice = scanner.nextInt();
 
@@ -18,7 +19,7 @@ public class Main {
                     Box<Integer> intBox = new Box<>();
                     intBox.setItem(3);
 
-                    main.printBoxValue(intBox);
+                    BoxUtils.printBoxValue(intBox);
                     break;
                 case 2:
                     Point p1 = new Point(1,0);
@@ -33,16 +34,23 @@ public class Main {
                     System.out.println("p2 v p4: " + p2.compare(p4));
                     System.out.println("p3 v p4: " + p3.compare(p4));
                     break;
-            }
-        }
-    }
+                case 3:
+                    Box<Double> d1 = new Box<>();
+                    d1.setItem(1.3);
 
-    public void printBoxValue(Box<Integer> box) {
-        if (!box.isEmpty()) {
-            Integer value = box.getItem();
-            System.out.println("Значение в коробке: " + value);
-        } else {
-            System.out.println("Коробка не содержит объект.");
+                    Box<Double> d2 = new Box<>();
+                    d2.setItem(5.4);
+
+                    Box<Integer> i1 = new Box<>();
+                    i1.setItem(3);
+
+                    Box<Integer> i2 = new Box<>();
+                    i2.setItem(8);
+
+                    List<Box<? extends Number>> boxes = List.of(d1, d2, i1, i2);
+                    System.out.println("Максимальное число: " + BoxUtils.findMaxDouble(boxes));
+                    break;
+            }
         }
     }
 }
