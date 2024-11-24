@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class Main {
             System.out.println("1. (1.1) Обобщенная коробка");
             System.out.println("2. (1.3) Сравнимое");
             System.out.println("3. (2.2) Поиск максимума");
+            System.out.println("4. (3.1) Функция");
 
             choice = scanner.nextInt();
 
@@ -49,6 +51,28 @@ public class Main {
 
                     List<Box<? extends Number>> boxes = List.of(d1, d2, i1, i2);
                     System.out.println("Максимальное число: " + BoxUtils.findMaxDouble(boxes));
+                    break;
+                case 4:
+                    List<String> strings = List.of("qwerty", "asdfg", "zx");
+                    List<Integer> lengths = ListTransformator.transform(strings, new TransformerLength());
+                    System.out.println("Длины строк: " + lengths);
+
+                    List<Integer> ints = List.of(1,-3,7);
+                    List<Integer> abses = ListTransformator.transform(ints, new TransformerAbs());
+                    System.out.println("Абсолютные значения: " + abses);
+
+                    ArrayList<Integer> numbers1 = new ArrayList<>();
+                    numbers1.add(1);
+                    numbers1.add(3);
+                    numbers1.add(2);
+                    ArrayList<Integer> numbers2 = new ArrayList<>();
+                    numbers2.add(6);
+                    numbers2.add(4);
+                    numbers2.add(5);
+                    List<ArrayList<Integer>> numbers = List.of(numbers1, numbers2);
+                    List<Integer> maxes = ListTransformator.transform(numbers, new TransformerMax());
+                    System.out.println("Максимумы: " + maxes);
+
                     break;
             }
         }
