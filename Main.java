@@ -54,19 +54,25 @@ public class Main {
                     break;
                 case 4:
                     List<String> strings = List.of("qwerty", "asdfg", "zx");
+                    // List<String> strings = List.of();
                     List<Integer> lengths = ListTransformator.transform(strings, new TransformerLength());
                     List<String> filteredLengths = Filter.filter(strings, new SorterLength());
+                    String combinedString = Reduction.reduce(strings, new ReduceString());
                     System.out.println("Исходные строки: " + strings);
                     System.out.println("Длины строк: " + lengths);
                     System.out.println("Строки больше 3 символов: " + filteredLengths);
+                    System.out.println("Объединение строк: " + combinedString);
                     System.out.println();
 
                     List<Integer> ints = List.of(1,-3,7);
+                    // List<Integer> ints = List.of();
                     List<Integer> abses = ListTransformator.transform(ints, new TransformerAbs());
                     List<Integer> filteredAbses = Filter.filter(ints, new SorterPositive());
+                    Integer sum = Reduction.reduce(ints, new ReduceInteger());
                     System.out.println("Исходные числа: " + ints);
                     System.out.println("Абсолютные значения: " + abses);
                     System.out.println("Положительные значения: " + filteredAbses);
+                    System.out.println("Сумма чисел: " + sum);
                     System.out.println();
 
                     ArrayList<Integer> numbers1 = new ArrayList<>();
@@ -80,9 +86,11 @@ public class Main {
                     List<ArrayList<Integer>> numbers = List.of(numbers1, numbers2);
                     List<Integer> maxes = ListTransformator.transform(numbers, new TransformerMax());
                     List<ArrayList<Integer>> filteredMaxes = Filter.filter(numbers, new SorterOnlyPositive());
+                    Integer len = Reduction.reduce(numbers, new ReduceArrayLength()).size();
                     System.out.println("Исходные списки: " + numbers);
                     System.out.println("Максимумы: " + maxes);
                     System.out.println("Положительные списки: " + filteredMaxes);
+                    System.out.println("Длина списков: " + len);
                     System.out.println();
                     break;
             }

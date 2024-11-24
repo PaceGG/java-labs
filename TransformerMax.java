@@ -10,7 +10,7 @@ public class TransformerMax implements Transformer<ArrayList<Integer>, Integer> 
         }
 
         if (max == null) {
-            throw new IllegalStateException("Набор чисел пуст.");
+            return 0;
         }
 
         return max;
