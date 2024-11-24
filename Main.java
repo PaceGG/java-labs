@@ -12,7 +12,7 @@ public class Main {
             System.out.println("1. (1.1) Обобщенная коробка");
             System.out.println("2. (1.3) Сравнимое");
             System.out.println("3. (2.2) Поиск максимума");
-            System.out.println("4. (3.1) Функция");
+            System.out.println("4. (3) Обобщенные методы");
 
             choice = scanner.nextInt();
 
@@ -55,11 +55,19 @@ public class Main {
                 case 4:
                     List<String> strings = List.of("qwerty", "asdfg", "zx");
                     List<Integer> lengths = ListTransformator.transform(strings, new TransformerLength());
+                    List<String> filteredLengths = Filter.filter(strings, new SorterLength());
+                    System.out.println("Исходные строки: " + strings);
                     System.out.println("Длины строк: " + lengths);
+                    System.out.println("Строки больше 3 символов: " + filteredLengths);
+                    System.out.println();
 
                     List<Integer> ints = List.of(1,-3,7);
                     List<Integer> abses = ListTransformator.transform(ints, new TransformerAbs());
+                    List<Integer> filteredAbses = Filter.filter(ints, new SorterPositive());
+                    System.out.println("Исходные числа: " + ints);
                     System.out.println("Абсолютные значения: " + abses);
+                    System.out.println("Положительные значения: " + filteredAbses);
+                    System.out.println();
 
                     ArrayList<Integer> numbers1 = new ArrayList<>();
                     numbers1.add(1);
@@ -67,12 +75,15 @@ public class Main {
                     numbers1.add(2);
                     ArrayList<Integer> numbers2 = new ArrayList<>();
                     numbers2.add(6);
-                    numbers2.add(4);
+                    numbers2.add(-4);
                     numbers2.add(5);
                     List<ArrayList<Integer>> numbers = List.of(numbers1, numbers2);
                     List<Integer> maxes = ListTransformator.transform(numbers, new TransformerMax());
+                    List<ArrayList<Integer>> filteredMaxes = Filter.filter(numbers, new SorterOnlyPositive());
+                    System.out.println("Исходные списки: " + numbers);
                     System.out.println("Максимумы: " + maxes);
-
+                    System.out.println("Положительные списки: " + filteredMaxes);
+                    System.out.println();
                     break;
             }
         }
