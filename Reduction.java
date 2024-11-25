@@ -3,8 +3,7 @@ import java.util.List;
 public class Reduction {
     public static <T> T reduce(List<T> list, Reducer<T> reducer){
         if (list.size() == 0) {
-            T result = null;
-            return reducer.reduce(result, result);
+            return reducer.reduce(null, null);
         }
         T result = list.get(0);
 

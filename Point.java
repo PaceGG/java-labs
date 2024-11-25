@@ -14,4 +14,8 @@ public class Point implements Comparable<Point> {
     public int compare(Point other){
         return Double.compare(this.distance(), other.distance());
     }
+
+    public String toString() {
+        return "(" + x + ", " + y + ")";
+    }
 }

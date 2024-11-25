@@ -19,9 +19,11 @@ public class Main {
             switch (choice) {
                 case 1:
                     Box<Integer> intBox = new Box<>();
+                    System.out.println("Коробка пуста, добавляем число 3");
                     intBox.setItem(3);
 
                     BoxUtils.printBoxValue(intBox);
+                    System.out.println("Коробка содержит число " + intBox.getItem());
                     break;
                 case 2:
                     Point p1 = new Point(1,0);
@@ -29,6 +31,10 @@ public class Main {
                     Point p3 = new Point(1,1);
                     Point p4 = new Point(2,2);
 
+                    System.out.println("p1: " + p1);
+                    System.out.println("p2: " + p2);
+                    System.out.println("p3: " + p3);
+                    System.out.println("p4: " + p4);
                     System.out.println("p1 v p2: " + p1.compare(p2));
                     System.out.println("p1 v p3: " + p1.compare(p3));
                     System.out.println("p1 v p4: " + p1.compare(p4));
@@ -38,22 +44,26 @@ public class Main {
                     break;
                 case 3:
                     Box<Double> d1 = new Box<>();
+                    System.out.println("Добавляем в коробку число 1.3");
                     d1.setItem(1.3);
 
                     Box<Double> d2 = new Box<>();
+                    System.out.println("Добавляем в коробку число 5.4");
                     d2.setItem(5.4);
 
                     Box<Integer> i1 = new Box<>();
+                    System.out.println("Добавляем в коробку число 3");
                     i1.setItem(3);
 
                     Box<Integer> i2 = new Box<>();
+                    System.out.println("Добавляем в коробку число 8");
                     i2.setItem(8);
 
                     List<Box<? extends Number>> boxes = List.of(d1, d2, i1, i2);
                     System.out.println("Максимальное число: " + BoxUtils.findMaxDouble(boxes));
                     break;
                 case 4:
-                    List<String> strings = List.of("qwerty", "asdfg", "zx");
+                    List<String> strings = List.of("aa", "bb", "zx");
                     // List<String> strings = List.of();
                     List<Integer> lengths = ListTransformator.transform(strings, new TransformerLength());
                     List<String> filteredLengths = Filter.filter(strings, new SorterLength());
@@ -80,12 +90,12 @@ public class Main {
                     numbers1.add(3);
                     numbers1.add(2);
                     ArrayList<Integer> numbers2 = new ArrayList<>();
-                    numbers2.add(6);
+                    numbers2.add(-6);
                     numbers2.add(-4);
-                    numbers2.add(5);
+                    numbers2.add(-5);
                     List<ArrayList<Integer>> numbers = List.of(numbers1, numbers2);
                     List<Integer> maxes = ListTransformator.transform(numbers, new TransformerMax());
-                    List<ArrayList<Integer>> filteredMaxes = Filter.filter(numbers, new SorterOnlyPositive());
+                    List<ArrayList<Integer>> filteredMaxes = Filter.filter(numbers, new SorterOnlyNegative());
                     Integer len = Reduction.reduce(numbers, new ReduceArrayLength()).size();
                     System.out.println("Исходные списки: " + numbers);
                     System.out.println("Максимумы: " + maxes);
