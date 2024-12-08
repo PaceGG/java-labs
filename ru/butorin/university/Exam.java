@@ -32,7 +32,9 @@ public class Exam {
             System.out.println("Текущая директория: " + System.getProperty("user.dir"));
         }
 
-        return students.entrySet().stream().filter(entry -> entry.getValue()[0] < 30 || entry.getValue()[1] < 30).map(Map.Entry::getKey).collect(Collectors.toList());
+        return students.entrySet().stream().filter(entry ->
+            entry.getValue()[0] < 30 || entry.getValue()[1] < 30)
+            .map(Map.Entry::getKey).collect(Collectors.toList());
 
     }
 }

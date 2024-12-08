@@ -3,9 +3,11 @@ import ru.butorin.fraction.*;
 import ru.butorin.animal.*;
 import ru.butorin.lists.ListModifier;
 import ru.butorin.university.Exam;
+import ru.butorin.text.TextProcessing;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class Main {
             System.out.println("2. (2.1) Декоратор");
             System.out.println("3. (3.4) Модифицация списка");
             System.out.println("4. (4.4) Чтение файла (студенты не сдавшие экзамен)");
+            System.out.println("5. (5.4) Чтение файла (глухие согласные, каждое нечетное слово)");
             choice = new java.util.Scanner(System.in).nextInt();
             switch (choice) {
                 case 1: {
@@ -86,6 +89,12 @@ public class Main {
                 case 4: {
                     List<String> failureStudents = Exam.failureStudents();
                     System.out.println("Студенты не сдавшие экзамен: " + failureStudents);
+                    break;
+                }
+                case 5: {
+                    Set<Character> chars = TextProcessing.processText();
+                    System.out.println(chars);
+                    break;
                 }
             }
         }
