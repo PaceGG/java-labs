@@ -4,13 +4,17 @@ import ru.butorin.animal.*;
 import ru.butorin.lists.ListModifier;
 import ru.butorin.university.Exam;
 import ru.butorin.text.TextProcessing;
+import ru.butorin.queue.QueueEquality;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.ArrayDeque;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         int choice = -1;
         while (choice != 0) {
             System.out.println("Выберите задачу:");
@@ -19,7 +23,8 @@ public class Main {
             System.out.println("3. (3.4) Модифицация списка");
             System.out.println("4. (4.4) Чтение файла (студенты не сдавшие экзамен)");
             System.out.println("5. (5.4) Чтение файла (глухие согласные, каждое нечетное слово)");
-            choice = new java.util.Scanner(System.in).nextInt();
+            System.out.println("6. (6.4) Равенство участка очереди");
+            choice = scanner.nextInt();
             switch (choice) {
                 case 1: {
                     Fraction fraction1 = new Fraction(1, 2);
@@ -94,6 +99,38 @@ public class Main {
                 case 5: {
                     Set<Character> chars = TextProcessing.processText();
                     System.out.println(chars);
+                    break;
+                }
+                case 6: {
+                    ArrayDeque<String> queue = new ArrayDeque<>();
+                    queue.add("a");
+                    queue.add("b");
+
+                    queue.add("c"); // 2
+                    queue.add("c");
+                    queue.add("c");
+                    queue.add("c"); // 5
+
+                    queue.add("g");
+
+                    // ArrayDeque<Integer> queue = new ArrayDeque<>();
+                    // queue.add(1);
+                    // queue.add(2);
+
+                    // queue.add(3); // 2
+                    // queue.add(3);
+                    // queue.add(3);
+                    // queue.add(3); // 5
+
+                    // queue.add(4);
+                    // queue.add(5);
+
+                    System.out.println("Исходная очередь: " + queue);
+                    System.out.println("Введите начало и конец участка очереди: ");
+                    int i = scanner.nextInt();
+                    int j = scanner.nextInt();
+                    System.out.println("Равенство очереди от " + i + " до " + j + ": " + QueueEquality.processQueue(queue, i, j));
+                    System.out.println("Очередь после обработки: " + queue);
                     break;
                 }
             }
