@@ -1,5 +1,6 @@
 package ru.butorin.main;
 import ru.butorin.fraction.*;
+import ru.butorin.animal.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +8,7 @@ public class Main {
         while (choice != 0) {
             System.out.println("Выберите задачу:");
             System.out.println("1. (1.1) Кэширование");
+            System.out.println("2. (2.1) Декоратор");
             System.out.println("0. Выход");
             choice = new java.util.Scanner(System.in).nextInt();
             switch (choice) {
@@ -29,7 +31,20 @@ public class Main {
                     System.out.println(fraction1 + " == " + fraction2 + ":" + fraction1.equals(fraction2));
                     System.out.println(fraction1 + " = " + fraction1.getDoubleValue());
                     System.out.println(fraction2 + " = " + fraction2.getDoubleValue());
+                    break;
+                }
+                case 2: {
+                    Cat cat = new Cat("cat");
+                    Puma puma = new Puma("puma");
 
+                    MeowingCounter catCounter = new MeowingCounter(cat);
+                    MeowingCounter pumaCounter = new MeowingCounter(puma);
+
+                    MeowingProcessor.processMeowing(catCounter, pumaCounter, catCounter);
+
+                    System.out.println("Количество мяуканий кота: " + catCounter.getCount());
+                    System.out.println("Количество мяуканий пумы: " + pumaCounter.getCount());
+                    break;
                 }
             }
         }
