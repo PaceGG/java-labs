@@ -84,8 +84,8 @@ public class Main {
                     break;
                 }
                 case 4: {
-                    Exam.failureStudents();
-                    break;
+                    List<String> failureStudents = Exam.failureStudents();
+                    System.out.println("Студенты не сдавшие экзамен: " + failureStudents);
                 }
             }
         }
