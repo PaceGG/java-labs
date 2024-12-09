@@ -50,22 +50,6 @@ public class Fraction implements IFraction {
         if (object == null || getClass() != object.getClass()) return false;
         Fraction fraction = (Fraction) object;
 
-        int gcdThis = gcd(this.numerator, this.denominator);
-        int gcdFraction = gcd(fraction.getNumerator(), fraction.getDenominator());
-        return this.numerator / gcdThis == fraction.getNumerator() / gcdFraction && this.denominator / gcdThis == fraction.getDenominator() / gcdFraction;
-    }
-    public int compareTo(Fraction fraction){
-        return Double.compare(this.getDoubleValue(), fraction.getDoubleValue());
-    }
-
-    public int hashCode(){
-        int gcd = gcd(this.numerator, this.denominator);
-        int reducedNumerator = this.numerator / gcd;
-        int reducedDenominator = this.denominator / gcd;
-        return reducedNumerator * 31 + reducedDenominator;
-    }
-
-    private int gcd(int a, int b){
-        return b == 0 ? a : gcd(b, a % b);
+        return this.numerator == fraction.getNumerator()  && this.denominator  == fraction.getDenominator();
     }
 }

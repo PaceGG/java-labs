@@ -43,9 +43,15 @@ public class Main {
                 case 1: {
                     Fraction fraction1 = new Fraction(1, 2);
                     Fraction fraction2 = new Fraction(2, 4);
+                    Fraction fraction3 = new Fraction(1, 2);
 
                     System.out.println("fraction1 = " + fraction1);
                     System.out.println("fraction2 = " + fraction2);
+                    System.out.println("fraction3 = " + fraction3);
+
+                    System.out.println();
+
+                    System.out.println(fraction1 + " == " + fraction3 + ": " + fraction1.equals(fraction3));
 
                     System.out.println();
 
@@ -68,6 +74,7 @@ public class Main {
                     MeowingCounter catCounter = new MeowingCounter(cat);
                     MeowingCounter pumaCounter = new MeowingCounter(puma);
 
+                    System.out.println("// MeowingProcessor.processMeowing(catCounter, pumaCounter, catCounter)");
                     MeowingProcessor.processMeowing(catCounter, pumaCounter, catCounter);
 
                     System.out.println("Количество мяуканий кота: " + catCounter.getCount());
@@ -86,11 +93,12 @@ public class Main {
                     int element = 3;
 
                     System.out.println("Исходный список: " + list);
+                    System.out.println("Вставка списка после элемента: " + element);
                     ListModifier.modifyList(list, element);
                     System.out.println("Модифицированный список: " + list);
                     System.out.println();
 
-                    List<String> listStrings = new ArrayList<>();
+                    ArrayList<String> listStrings = new ArrayList<>();
                     listStrings.add("a");
                     listStrings.add("b");
                     listStrings.add("c");
@@ -101,6 +109,7 @@ public class Main {
                     String elementString = "c";
 
                     System.out.println("Исходный список: " + listStrings);
+                    System.out.println("Вставка списка после элемента: " + elementString);
                     ListModifier.modifyList(listStrings, elementString);
                     System.out.println("Модифицированный список: " + listStrings);
                     break;
@@ -149,6 +158,7 @@ public class Main {
                 }
                 case 7: {
                     Point p1 = new Point(1, 2);
+                    Point p12 = new Point(1, 2);
                     Point p13 = new Point(1, -2);
                     Point p2 = new Point(3, 4);
                     Point p3 = new Point(5, 6);
@@ -156,7 +166,9 @@ public class Main {
                     Point p5 = new Point(3, -4);
                     Point p6 = new Point(4, -4);
 
-                    List<Point> points = Arrays.asList(p1, p13, p2, p3, p4, p5, p6);
+                    List<Point> points = Arrays.asList(p1, p12, p13, p2, p3, p4, p5, p6);
+
+                    System.out.println("Исходный список точек: " + points);
 
                     List<Point> processedPoints = points.stream()
                             .map(p -> new Point(p.getX(), Math.abs(p.getY())))

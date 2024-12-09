@@ -17,7 +17,6 @@ public class QueueEquality<T> {
         for (int k = i+1; k <= j; k++) {
             T t = tempQueue.poll();
             if (t != e) return false;
-            e = t;
         }
 
         return true;

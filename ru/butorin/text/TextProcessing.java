@@ -23,7 +23,7 @@ public class TextProcessing {
         goodCharacters.add('ш');
         goodCharacters.add('щ');
 
-        Set<Character> chars = new HashSet<>();
+        Set<Character> chars = new TreeSet<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))){
             String line;
@@ -46,7 +46,7 @@ public class TextProcessing {
             System.out.println("Текущая директория: " + System.getProperty("user.dir"));
         }
 
-        return new TreeSet<>(chars);
+        return chars;
 
     }
 }

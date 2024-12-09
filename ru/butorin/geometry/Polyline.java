@@ -12,9 +12,10 @@ public class Polyline {
     public String toString() {
         String s = "Линия [";
         
-        for (int i = 0; i < points.size(); i++) {
+        for (int i = 0; i < points.size() - 1; i++) {
             s += points.get(i) + ",";
         }
+        s += points.get(points.size() - 1);
         s += "]";
         return s;
     }
