@@ -17,7 +17,6 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.Comparator;
 import java.util.Map;
-import java.util.TreeMap;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
@@ -196,7 +195,7 @@ public class Main {
                                 return new Person(formattedName, number);
                             })
                             .filter(person -> person.getNumber() != null)
-                            .collect(Collectors.groupingBy(Person::getNumber, TreeMap::new, Collectors.mapping(Person::getName, Collectors.toList())));
+                            .collect(Collectors.groupingBy(Person::getNumber, Collectors.mapping(Person::getName, Collectors.toList())));
                             System.out.println(names);
                     } catch (IOException e) {
                         System.out.println("Ошибка чтения файла: " + e.getMessage());
